@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>“node.js到底是用来做什么的” | 17的博客</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="17的博客">
+    <meta name="author" content="Mark17">
+    <meta name="description" content="不忘初心 砥砺前行" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/mark17.github.io/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="17的博客" type="application/atom+xml">
+    <link rel="stylesheet" href="/mark17.github.io/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/mark17.github.io/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/mark17.github.io/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/mark17.github.io/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/mark17.github.io/js/html5shiv.min.js"></script>
+    <script src="/mark17.github.io/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/mark17.github.io/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/mark17.github.io/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/mark17.github.io/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/mark17.github.io/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/mark17.github.io/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">17的博客</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-10-03T13:45:24.000Z" itemprop="datePublished">
+          2017-10-03
+      </time>
+    
+    
+    | 
+    <a href='/mark17.github.io/tags/不忘初心-砥砺前行/'>不忘初心 砥砺前行</a>
+    
+    
+</span>
+                <h1>“node.js到底是用来做什么的”</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="Node-js的到底是用来做什么的"><a href="#Node-js的到底是用来做什么的" class="headerlink" title="Node.js的到底是用来做什么的"></a>Node.js的到底是用来做什么的</h1><p>在阐述之前我想放一个链接，这是国外的一个大神，对于node.js非常好的一篇介绍的文章,英文比较好的朋友可以直接去阅读，<strong>本文也很大程度上参考了这篇文章，也同时感谢知乎用户厂长对于本文的翻译！</strong>原文题目为<a href="https://www.sitepoint.com/node-js-is-the-new-black/" target="_blank" rel="external">Node.js is the New Black</a></p>
+<p>#Node.js的简介<br>根据维基百科对于Node.js的介绍，我们可以知道一些基本关于Node.js的情况。Node.js是瑞安·达尔（Ryan Dahl）在2009年发明出来的一种一个能够在服务器端运行JavaScript，并且可以开放源代码，以及跨平台运行JavaScript的一种运行环境。<br>Node.js采用了Google公司的V8引擎。Node.js允许通过JavaScript和一系列模块来编写服务器端应用和网络相关的应用。核心模块包括文件系统I/O、网络（HTTP、TCP、UDP、DNS、TLS/SSL等）、二进制数据流、加密算法、数据流等等。Node模块的API形式简单，降低了编程的复杂度。<br>Node.js主要用于编写像Web服务器一样的网络应用，这和PHP和Python是类似的。但是Node.js与其他语言最大的不同之处在于，PHP等语言是阻塞的（只有前一条命令执行完毕才会执行后面的命令），而Node.js是非阻塞的（多条命令可以同时被运行，通过回调函数得知命令已结束运行）。<br>Node.js是事件驱动的。开发者可以在不使用线程的情况下开发出一个能够承载高并发的服务器。其他服务器端语言难以开发高并发应用，而且即使开发出来，性能也不尽人意。Node.js正是在这个前提下被创造出来。Node.js把JavaScript的易学易用和Unix网络编程的强大结合到了一起。<br>Node.js使用Google V8 JavaScript 引擎，因为</p>
+<ul>
+<li>V8是基于BSD许可证的开源软件</li>
+<li>V8速度非常快</li>
+<li>V8专注于网络功能，在HTTP、DNS、TCP等方面更加成熟</li>
+</ul>
+<p>Node.js已经有数十万模块，它们可以通过一个名为npm的管理器免费下载。Node.js开发社区主要有两个邮件列表、一个在freenode的名为#node.js的IRC频道。社区集中在<a href="http://nodeconf.com" target="_blank" rel="external">NodeConf</a>。</p>
+<h1 id="杂叙"><a href="#杂叙" class="headerlink" title="杂叙"></a>杂叙</h1><p>在学习Web前端的朋友看来，Node.js是一个经常会听到而且无法回避的问题，然而国内的资料相对较少，国外的资料大多数是以英文为主要蓝本阐述的，所以友好度并不高，我结合最近查询到的资料，结合自己浅薄的见解，做出一点点介绍和综述，希望可以帮到大家。如有不正，多请斧正！</p>
+<h4 id="1-Node-js到底是什么"><a href="#1-Node-js到底是什么" class="headerlink" title="1.  Node.js到底是什么"></a>1.  Node.js到底是什么</h4><p>Node.js在维基百科中就已经很明确的说明了，它是一个<strong>运行环境</strong>，并不是其他的什么比如软件库，简而言之，和C#所需要的编译环境一样，Node.js就是JavaScript的编译环境，它存在的目的就是为了让JavaScript可以和其他的后端语言一样能够在浏览器上运行，换种说法就是，可以让前端语言JavaScript在写完之后交给Node.js进行编译和解释，它的存在对于JavaScript有了质的飞跃，对于一个前端来说利用JavaScript就可以编译后台代码是一件多么爽飞天的事情。<br>简单的Node.js命令就是</p>
+<p><code>#node hello.js</code></p>
+<h4 id="2-V8引擎"><a href="#2-V8引擎" class="headerlink" title="2. V8引擎"></a>2. V8引擎</h4><p>我们都知道计算机处理器智能识别机器语言，而JavaScript是一门高级语言，计算机并不能直接读懂。所以我们需要所谓的引擎来将其转化成计算机所能理解的语言。v8引擎是由Google推出的，为其浏览器Chrome所设计的开源JavaScript引擎。得益于JIT，编译模式的改变与编译阶段的优化，JavaScript的性能得到了一个飞跃。其源代码是用c++写的，感除了对JavaScript性能的大幅提升，v8引擎也提供了“嵌入”的功能，使得开发者也可以在自己的c++程序中使用“嵌入”的v8引擎，从而高效地编译JavaScript，并加入c++的feature。要知道，作为一个底层得多的语言，c++可以实现的feature可要比JavaScript多得多。举例说明，JavaScript本身并没有read这么一个function。然而通过v8，我们可以将其绑定到一个用c++写的read callback上，从而通过JavaScript我们也可以直接加载文件了。<br>于是，借助于v8种种便利的功能，Node.js诞生了。</p>
+<h4 id="3-数据的请求和处理（表述的不太准确望海涵）"><a href="#3-数据的请求和处理（表述的不太准确望海涵）" class="headerlink" title="3. 数据的请求和处理（表述的不太准确望海涵）"></a>3. 数据的请求和处理（<em>表述的不太准确望海涵</em>）</h4><p>首先我们要注意的是<strong>浏览器给网站发请求的过程一直没怎么变过</strong>。当浏览器给网站发了请求。服务器收到了请求，然后开始搜寻被请求的资源。如果有需要，服务器还会查询一下数据库，最后把响应结果传回浏览器。不过，在传统的web服务器中，每一个请求都会让服务器创建一个新的进程来处理这个请求。后来有了Ajax，我们就不用每次都请求一个完整的新页面了，取而代之的是，每次只请求需要的部分页面信息就可以了。这显然是一个进步。但是比如你要建一个类似微博的社交网站，导致的结果是你的好友会随时的推送新的状态，然后你的新鲜事会实时自动刷新。要达成这个需求，我们需要让用户一直与服务器保持一个有效连接。目前最简单的实现方法，就是让用户和服务器之间保持长轮训（long polling）。<br>HTTP请求不是持续的连接，你请求一次，服务器响应一次，然后就完了。长轮训是一种利用HTTP模拟持续连接的技巧。具体来说，只要页面载入了，不管你需不需要服务器给你响应信息，你都会给服务器发一个Ajax请求。这个请求不同于一般的Ajax请求，服务器不会直接给你返回信息，而是它要等着，直到服务器觉得该给你发信息了，它才会响应。比如，你的好友发了一条新鲜事，服务器就会把这个新鲜事当做响应发给你的浏览器，然后你的浏览器就刷新页面了。浏览器收到响应刷新完之后，再发送一条新的请求给服务器，这个请求依然不会立即被响应。于是就开始重复以上步骤。利用这个方法，可以让浏览器始终保持等待响应的状态。虽然以上过程依然只有非持续的HTTP参与，但是我们模拟出了一个看似持续的连接状态我们再看传统的服务器。每次一个新用户连到你的网站上，你的服务器就得开一个连接。每个连接都需要占一个进程，这些进程大部分时间都是闲着的（比如等着你好友发新鲜事，等好友发完才给用户响应信息。或者等着数据库返回查询结果什么的）。虽然这些进程闲着，但是照样占用内存。这意味着，如果用户连接数的增长到一定规模，你服务器没准就要耗光内存直接瘫了。这种情况怎么解决？解决方法就是刚才上边说的：非阻塞和事件驱动。这些概念在我们谈的这个情景里面其实没那么难理解。你把非阻塞的服务器想象成一个loop循环，这个loop会一直跑下去。一个新请求来了，这个loop就接了这个请求，把这个请求传给其他的进程（比如传给一个搞数据库查询的进程），然后响应一个回调（callback）。完事了这loop就接着跑，接其他的请求。这样下来。服务器就不会像之前那样傻等着数据库返回结果了。如果数据库把结果返回来了，loop就把结果传回用户的浏览器，接着继续跑。在这种方式下，你的服务器的进程就不会闲着等着。从而在理论上说，同一时刻的数据库查询数量，以及用户的请求数量就没有限制了。服务器只在用户那边有事件发生的时候才响应，这就是事件驱动。FriendFeed是用基于Python的非阻塞框架Tornado (知乎也用了这个框架) 来实现上面说的新鲜事功能的。不过，Node.js就比前者更妙了。Node.js的应用是通过javascript开发的，然后直接在Google的变态V8引擎上跑。<br>用了Node.js，你就不用担心用户端的请求会在服务器里跑了一段能够造成阻塞的代码了。因为javascript本身就是事件驱动的脚本语言。你回想一下，在给前端写javascript的时候，更多时候你都是在搞事件处理和回调函数。所以javascript本身就是给事件处理量身定制的语言。</p>
+<h4 id="4-使用Node-js的优劣（很重要）"><a href="#4-使用Node-js的优劣（很重要）" class="headerlink" title="4. 使用Node.js的优劣（很重要）"></a>4. 使用Node.js的优劣（很重要）</h4><p>在使用Node.js的时候我们可以知道，Node.js解决了很多JavaScript的痛点。当然Node.js作为一个语言也有很多都缺陷。<br><strong>优势</strong></p>
+<ul>
+<li>采用事件驱动、异步编程，为网络服务而设计。其实Javascript的匿名函数和闭包特性非常适合事件驱动、异步编程。而且JavaScript也简单易学，很多前端设计人员可以很快上手做后端设计。</li>
+<li>Node.js非阻塞模式的IO处理给Node.js带来在相对低系统资源耗用下的高性能与出众的负载能力，非常适合用作依赖其它IO资源的中间层服务。</li>
+<li>Node.js轻量高效，可以认为是数据密集型分布式部署环境下的实时应用系统的完美解决方案。Node非常适合如下情况：在响应客户端之前，您预计可能有很高的流量，但所需的服务器端逻辑和处理不一定很多。</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li><p>可靠性低。</p>
+</li>
+<li><p>单进程，单线程，只支持单核CPU，不能充分的利用多核CPU服务器。一旦这个进程崩掉，那么整个web服务就崩掉了。</p>
+</li>
+</ul>
+<p>当然对于这些缺点也哟普很多解决办法：</p>
+<ul>
+<li>开启多个进程，每个进程绑定不同的端口，用反向代理服务器如 Nginx 做负载均衡，好处是我们可以借助强大的 Nginx 做一些过滤检查之类的操作，同时能够实现比较好的均衡策略，但坏处也是显而易见——我们引入了一个间接层。</li>
+<li>多进程绑定在同一个端口侦听。在Node.js中，提供了进程间发送“文件句柄” 的功能。</li>
+<li>一个进程负责监听、接收连接，然后把接收到的连接平均发送到子进程中去处理。</li>
+</ul>
+<h4 id="5-适用场景"><a href="#5-适用场景" class="headerlink" title="5. 适用场景"></a>5. 适用场景</h4><p>SON APIs——构建一个Rest/JSON API服务，Node.js可以充分发挥其非阻塞IO模型以及JavaScript对JSON的功能支持(如JSON.stringfy函数)单页面、多Ajax请求应用——如Gmail，前端有大量的异步请求，需要服务后端有极高的响应速度基于Node.js开发Unix命令行工具——Node.js可以大量生产子进程，并以流的方式输出，这使得它非常适合做Unix命令行工具流式数据——传统的Web应用，通常会将HTTP请求和响应看成是原子事件。而Node.js会充分利用流式数据这个特点，构建非常酷的应用。如实时文件上传系统transloadit准实时应用系统——如聊天系统、微博系统，但Javascript是有垃圾回收机制的，这就意味着，系统的响应时间是不平滑的(GC垃圾回收会导致系统这一时刻停止工作)。如果想要构建硬实时应用系统，Erlang是个不错的选择。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>Node.js是一个对于前端工作者不可或缺的工具。尤其是对于JavaScript有着巨大的提升，现阶段Node.js的应用已经有了非常蓬勃的发展。对于Node.js的学习和熟练运用，必不可少！以上。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/mark17.github.io/2017/10/03/从URL的输入到页面的展示/">
+        从URL的输入到页面的展示 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Mark17. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/mark17.github.io/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/mark17.github.io/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/mark17.github.io/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/mark17.github.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/mark17.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
